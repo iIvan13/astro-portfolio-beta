@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Ivan">
+  <section>
+    <article>
+      <div>
+        <h1>
+          <span class="blue__text intro-welcome" data-aos="zoom-in-dowm" data-aos-duration="1000" >Welcome, my name is</span>
+          <span>Ivan.</span>
+        </h1>
+
+        <h2 class="intro" data-aos="fade-up" data-aos-duration="1500">I create engaging and dynamic web experiences.</h2>
+      </div>
+
+      <p data-aos="fade-up" data-aos-duration="2000">
+        Front-end developer specializing in <span
+          class="blue__text"
+          translate="no">React</span
+        > and <span class="blue__text" translate="no">Astro</span> frameworks, skilled
+        in crafting dynamic and efficient user interfaces.
+      </p>
+      <Button link="/projects" dataAos="zoom-in-up">
+        See my projects <i class="ri-arrow-right-s-line"></i>
+      </Button>
+    </article>
+
+    <style>
+      section {
+        width: 100%;
+      }
+
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 60%;
+      }
+
+      .intro-welcome {
+        font-size: 1rem;
+      }
+
+      .intro {
+        font-size: 2.25rem;
+        color: rgb(146, 146, 165);
+      }
+
+      h1 {
+        font-size: 3.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      @media (max-width: 868px) {
+        section {
+          flex-direction: column-reverse;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .intro {
+          font-size: 1.5rem;
+        }
+
+        article {
+          width: 100%;
+        }
+      }
+    </style>
+  </section>
+</Layout>

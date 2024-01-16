@@ -1,0 +1,123 @@
+---
+import Hamburger from "./Hamburger.astro";
+---
+
+<header class="header">
+  <div>
+    <div >
+      <a href="/"><img src="/Logo.svg" alt="Logo" /></a>
+    </div>
+
+    <Hamburger />
+  </div>
+
+  <nav id="nav-toogle">
+    <ul class="navigation-links">
+      <li data-aos="fade-up" data-aos-duration="500">
+        <a href="/"> <span class="blue__text">#</span>home</a>
+      </li>
+      <li data-aos="fade-up" data-aos-duration="1000">
+        <a href="/projects"> <span class="blue__text">#</span>projects</a>
+      </li>
+      <li data-aos="fade-up" data-aos-duration="1500">
+        <a href="/about"> <span class="blue__text">#</span>about-me</a>
+      </li>
+      <li data-aos="fade-up" data-aos-duration="2000">
+        <a href="/contacts"><span class="blue__text">#</span>contacts</a>
+      </li>
+    </ul>
+    <ul class="links-social-header">
+      <li>
+        <a href="https://github.com/Iv44n" target="_blank" rel="noreferrer"
+          ><i class="ri-github-fill icons"></i></a
+        >
+      </li>
+      <li>
+        <a href="#" target="_blank" rel="noreferrer"
+          ><i class="ri-linkedin-box-fill icons"></i></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://instagram.com/atm.iv4n?igshid=OGQ5ZDc2ODk2ZA=="
+          target="_blank"
+          rel="noreferrer"><i class="ri-instagram-fill icons"></i></a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script src="../js/menu.js"></script>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 35px 13%;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .links-social-header {
+    display: none;
+  }
+
+  .navigation-links {
+    display: flex;
+    gap: 5rem;
+  }
+
+  @media (max-width: 868px) {
+    .header {
+      display: block;
+      padding: 30px 7%;
+      transition: height 0.4s linear;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      height: 30px;
+    }
+
+    .header div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header.active {
+      background: transparent;
+      backdrop-filter: blur(25px);
+      height: 100vh;
+    }
+
+    nav {
+      margin-top: 5rem;
+      gap: 7rem;
+      display: none;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .header.active nav {
+      display: flex;
+    }
+
+    .navigation-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 7rem;
+    }
+
+    .links-social-header {
+      display: flex;
+      gap: 2rem;
+      font-size: 24px;
+    }
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<Layout title="Projects">
+  <header>
+    <h1>
+      <span class="blue__text">/&nbsp</span>Projects
+    </h1>
+    <p data-aos="zoom-in" data-aos-duration="800">
+      Explore my portfolio, where you will find a variety of projects that I
+      have carried out.
+    </p>
+  </header>
+  <section>
+    <ProjectCard
+      tags={["https://lukeliasi.com/images/dev-logos/javascript.svg"]}
+      isOpenSource
+      image="https://lukeliasi.com/images/databaseS3Backups-portfolio.png"
+      title="NextCent"
+      projectYear="2022"
+      projectLink="https://quinceplayers.com">
+      <p slot="subtitle">
+        This script is designed to automate the process of backing up various
+        databases to AWS S3. It supports PostgreSQL, MySQL, and MongoDB.
+      </p>
+
+      <div slot="description">
+        <p>
+          When initialized, the script reads database connection URIs from
+          environment variables.
+        </p>
+        <p>
+          Scheduled through a cron job, it dumps the databases, compresses the
+          data, and transfers the files to a predetermined AWS S3 bucket.
+        </p>
+      </div>
+    </ProjectCard>
+    <ProjectCard
+      tags={["https://lukeliasi.com/images/dev-logos/javascript.svg"]}
+      isOpenSource
+      image="https://lukeliasi.com/images/databaseS3Backups-portfolio.png"
+      title="NextCent"
+      projectYear="2022"
+      projectLink="https://quinceplayers.com">
+      <p slot="subtitle">
+        This script is designed to automate the process of backing up various
+        databases to AWS S3. It supports PostgreSQL, MySQL, and MongoDB.
+      </p>
+
+      <div slot="description">
+        <p>
+          When initialized, the script reads database connection URIs from
+          environment variables.
+        </p>
+        <p>
+          Scheduled through a cron job, it dumps the databases, compresses the
+          data, and transfers the files to a predetermined AWS S3 bucket.
+        </p>
+      </div>
+    </ProjectCard>
+  </section>
+</Layout>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  section {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    row-gap: 3rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  header {
+    color: var(--blue-100);
+  }
+</style>

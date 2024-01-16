@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { frontendSkills } from "../js/skills";
+import DevSkills from "../components/DevSkills.astro";
+---
+
+<Layout title="About me">
+  <header>
+    <h1 id="greeting"></h1>
+    <h2 data-aos="fade-right" data-aos-duration="1000">
+      I’m Ivan!, i am a self-taught front-end developer based in Lima, Peru.
+    </h2>
+  </header>
+
+  <section>
+    <article class="section-text">
+      <p data-aos="zoom-in" data-aos-duration="1500">
+        My main experience is focused on creating responsive websites, building
+        them from scratch and turning them into modern and friendly web
+        experiences using technologies such as HTML, CSS and JS.
+      </p>
+
+      <p data-aos="zoom-in" data-aos-duration="2000">
+        Throughout my career, I have developed skills in handling frameworks
+        such as Astro and Next.js, as well as mastering libraries such as React.
+        My commitment to the constant pursuit of learning drives me to keep
+        myself updated with the latest technologies, which allows me to offer
+        innovative and high quality solutions in every project in which I
+        participate.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <article>
+      <h2 class="skills-h2">
+        <span class="blue__text">#&nbsp</span>Skills
+      </h2>
+
+      <div class="skills">
+        {
+          frontendSkills.map((skill, index) => (
+            <DevSkills index={index + 1}>{skill}</DevSkills>
+          ))
+        }
+      </div>
+    </article>
+  </section>
+</Layout>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h1 {
+    color: var(--blue-600);
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .skills-h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  article {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .section-text {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .skills {
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    color: rgb(187, 182, 207);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 868px) {
+    article {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .section-text {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+</style>
+
+<script>
+  import { greeting } from "../js/greeting";
+
+  function greet() {
+    const greetingContainer = document.getElementById("greeting");
+    greetingContainer.innerText = greeting();
+  }
+
+  greet();
+  document.addEventListener("astro:after-swap", greet);
+</script>

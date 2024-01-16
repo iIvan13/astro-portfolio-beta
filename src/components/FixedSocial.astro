@@ -1,0 +1,60 @@
+<div class="fixed__social">
+  <div></div>
+  <ul>
+    <li data-aos="fade-up" data-aos-duration="500">
+      <a href="https://github.com/Iv44n" target="_blank" rel="noreferrer"
+        ><i class="ri-github-fill"></i></a
+      >
+    </li>
+    <li data-aos="fade-up" data-aos-duration="1000">
+      <a href="#" target="_blank" rel="noreferrer"
+        ><i class="ri-linkedin-box-fill"></i></a
+      >
+    </li>
+    <li data-aos="fade-up" data-aos-duration="1500">
+      <a
+        href="https://instagram.com/atm.iv4n?igshid=OGQ5ZDc2ODk2ZA=="
+        target="_blank"
+        rel="noreferrer"><i class="ri-instagram-fill"></i></a
+      >
+    </li>
+  </ul>
+</div>
+
+<style>
+  .fixed__social {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1.7rem;
+    margin-left: 3%;
+    background: var(--bg--dark);
+    z-index: 100;
+  }
+
+  a:hover {
+    color: var(--text-basic);
+  }
+
+  .fixed__social div {
+    width: 20rem;
+    height: 2px;
+    rotate: 90deg;
+    background: var(--text-basic);
+  }
+
+  .fixed__social ul {
+    margin-top: 10rem;
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 868px) {
+    .fixed__social {
+      display: none;
+    }
+  }
+</style>

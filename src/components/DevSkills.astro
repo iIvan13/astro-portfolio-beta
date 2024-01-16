@@ -1,0 +1,32 @@
+---
+interface Props {
+  index: number;
+}
+
+const { index } = Astro.props;
+---
+
+<div data-aos="zoom-in" data-aos-duration={`${index * 100}`}>
+  <slot />
+</div>
+
+<style>
+  div {
+    position: relative;
+    border-radius: 3px;
+    padding: 4px 8px;
+    background: rgba(63, 63, 96, 0.361);
+  }
+
+  div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(80px);
+    z-index: -1;
+  }
+</style>

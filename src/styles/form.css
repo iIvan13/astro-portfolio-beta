@@ -1,0 +1,81 @@
+   form {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-end;
+       gap: 1.3rem;
+       width: 600px;
+       max-width: 100%;
+   }
+
+   input,
+   textarea {
+       background: #0b0c1caa;
+       width: 100%;
+       border: 2px solid #455168c9;
+       padding: 6px 10px;
+       border-radius: 4px;
+       color: var(--blue-100);
+       outline: 0;
+   }
+
+   input::placeholder,
+   textarea::placeholder {
+       color: rgb(134, 134, 134);
+   }
+
+   input:focus,
+   textarea:focus {
+       border-color: #0b0c1c00;
+       outline-width: 1.7px;
+       outline-color: #0c49ffe1;
+       outline-style: solid;
+   }
+
+   .responsive__inputs {
+       display: flex;
+       gap: 1.3rem;
+       width: 100%;
+   }
+
+   .submit__buttom {
+       max-width: max-content;
+       padding: 8px 12px;
+       background: #00000000;
+       color: var(--blue-100);
+       border: solid 2px var(--blue-600);
+       font-weight: 600;
+       cursor: pointer;
+       border-radius: 3px;
+       display: flex;
+       align-items: center;
+       gap: 0.5rem;
+   }
+
+   .load{
+    width: 17.45px;
+    height: 17.45px;
+   }
+
+   .submit__buttom.active .svg-icon {
+       animation: spin 2s linear infinite;
+   }
+
+   @keyframes spin {
+       0% {
+           transform: rotate(0deg);
+       }
+
+       100% {
+           transform: rotate(-360deg);
+       }
+   }
+
+   @media (max-width: 868px) {
+       .responsive__inputs {
+           flex-direction: column;
+       }
+
+       form {
+           width: 100%;
+       }
+   }

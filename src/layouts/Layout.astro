@@ -1,0 +1,90 @@
+---
+import FixedSocial from "../components/FixedSocial.astro";
+import "remixicon/fonts/remixicon.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions";
+import "aos/dist/aos.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/icon.svg" type="image/x-icon" />
+
+    <title>{title}</title>
+
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <div>
+      <FixedSocial />
+      <Header />
+
+      <main>
+        <slot />
+      </main>
+    </div>
+    <Footer />
+
+    <canvas id="waves"></canvas>
+
+    <style is:global>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      @keyframes fadeInWaves {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0.5;
+        }
+      }
+
+      canvas#waves {
+        width: 100%;
+        height: 100vh;
+        animation: fadeInWaves 2s;
+        background: transparent;
+        opacity: 0.5;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -100;
+      }
+
+      main {
+        width: 100%;
+        padding: 0 13%;
+        margin: 6rem 0;
+      }
+
+      @media (max-width: 868px) {
+        main {
+          padding: 0 7%;
+          margin: 8rem 0 3rem 0;
+        }
+      }
+    </style>
+
+    <script src="../js/scroll.js"></script>
+    <script src="../js/waves.js"></script>
+  </body>
+</html>
